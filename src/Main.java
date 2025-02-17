@@ -6,6 +6,13 @@ import books.Book;
 
 import java.math.BigDecimal;
 
+
+// Debug
+import java.util.ArrayList;
+import java.util.List;
+import java.time.LocalDateTime;
+
+
 public class Main {
     public static void main(String[] args) {
 
@@ -67,5 +74,12 @@ public class Main {
         bList.takeFromStorage();
         System.out.println("\n\nList output after storage (should be the same as after the last sorting): \n" + bList.toString() + "\n");
 
+
+        System.out.println("\n\nFound books: \n");
+        List<Book> foundBook = bList.FindBookByTag(BookTag.PAGES_NUMBER, 328);
+        for(Book book : foundBook ){
+            System.out.println(book.toString());
+        }
     }
 }
+
